@@ -8,7 +8,7 @@ Internet.
 
 .. code::
 
-    $ pip install pscheker
+    $ pip install pschecker
     $ pschecker
 
     Welcome to Personal Server Checker!
