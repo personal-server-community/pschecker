@@ -1,6 +1,6 @@
 import os
 
-import root_password
+from . import root_password
 
 
 check_runners = [
@@ -9,6 +9,6 @@ check_runners = [
 
 
 if os.getenv("DEBUG", False):
-    import fail
-    import success
+    from . import fail
+    from . import success
     check_runners += [fail, success]

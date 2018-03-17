@@ -1,6 +1,8 @@
+#!/usr/bin/env python
 import click
 
-from . import checks
+from pschecker import checks
+
 
 GREEN = '\033[92m'
 ORANGE = '\033[93m'
@@ -16,7 +18,7 @@ ENDC = '\033[0m'
     help="Distribution your server is running on. Choose between debian, " + \
          "ubuntu or arch."
 )
-def pschecker(distribution):
+def cli(distribution):
     config = build_config(distribution)
     display_introduction(config)
     run_diagnostic(config)
@@ -50,5 +52,5 @@ def display_check_result(name, result):
         print("* %s" % result["message"])
 
 
-if __name__ == "__main__":
-    pschecker()
+if __name__ == '__main__':
+    cli()
