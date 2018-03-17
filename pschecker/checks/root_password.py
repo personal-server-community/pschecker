@@ -10,7 +10,7 @@ def run_check(config):
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT
     )
-    first_line = result.stdout.readlines()[0]
+    first_line = str(result.stdout.readlines()[0])
 
     if "NP" in first_line:
         return {"status": "SUCCESS"}
