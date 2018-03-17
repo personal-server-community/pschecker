@@ -1,6 +1,6 @@
 import subprocess
 
-name = "Root can use password"
+name = "Root must not use password"
 description = "Your root user should not be able to log in with a password."
 
 def run_check(config):

@@ -14,6 +14,6 @@ Internet.
     Welcome to Personal Server Checker!
     Your personal server diagnostic is:
     Distribution: debian
-    Root can use password: OK
-    Port listening: OK
+    Root must not use password: OK
+    No process listens on 0.0.0.0 host: OK
     You are all good!
