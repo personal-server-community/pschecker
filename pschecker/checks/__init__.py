@@ -1,10 +1,11 @@
 import os
 
-from . import root_password
+from . import root_password, host_listening
 
 
 check_runners = [
-    root_password
+    root_password,
+    host_listening
 ]
 
 
