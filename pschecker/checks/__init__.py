@@ -11,4 +11,5 @@ check_runners = [
 if os.getenv("DEBUG", False):
     from . import fail
     from . import success
-    check_runners += [fail, success]
+    from . import warning
+    check_runners += [fail, success, warning]

@@ -1,9 +1,9 @@
 
 name = "Fail"
-description = "Always fails"
+description = "It always fails."
 
 def run_check(config):
     return {
         "status": "FAILURE",
-        "message": "It always fails."
+        "message": description
     }
