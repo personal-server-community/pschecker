@@ -47,6 +47,9 @@ def run_diagnostic(config):
 def display_check_result(name, result):
     if result["status"] == "SUCCESS":
         print("%s: %s" % (name, GREEN + "OK" + ENDC))
+    elif result["status"] == "WARNING":
+        print("%s: %s" % (name, ORANGE + "WARN" + ENDC))
+        print("* %s" % result["message"])
     else:
         print("%s: %s" % (name, RED + BOLD + "KO" + ENDC))
         print("* %s" % result["message"])
