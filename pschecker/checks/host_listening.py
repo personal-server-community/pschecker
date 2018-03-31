@@ -28,7 +28,7 @@ def run_check(config):
             host = ":::"
         else:
             port = int(host.split(":")[1])
-            host = "0.0.0.0"
+            host = int(host.split(":")[0])
         name = column[6].split("/")[1]
         if port > UNKNOWN_PORT_LIMIT \
            and port not in XMPP_PORTS \
