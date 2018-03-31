@@ -15,7 +15,7 @@ def run_check(config):
         return {"status": "SUCCESS"}
     else:
         lines = get_lines_from_command("cat /root/.ssh/authorized_keys")
-        if os.path.exists("/root/.ssh/authorizeld_keys") and len(lines) > 0:
+        if os.path.exists("/root/.ssh/authorized_keys") and len(lines) > 0:
             return {
                 "status": "FAILURE",
                 "message": "Your root user should not be able to log in with "
