@@ -23,10 +23,11 @@ def run_check(config):
     for line in lines:
         column = str(line).split()
         host = column[3]
+        port = 0
         if host[:3] == ":::":
             port = int(host[3:])
             host = ":::"
-        else:
+        elif len(host.split(":")) > 1:
             port = int(host.split(":")[1])
             host = host.split(":")[0]
         name = column[6].split("/")[1]
