@@ -30,5 +30,5 @@ def run_check(config):
 def check_ufw():
     lines = get_lines_from_command("sudo ufw status")
     return len(lines) > 2 and \
-        "Status" in lines[1] and \
-        "inactive" not in lines[1]
+        "Status" in lines[0] and \
+        "inactive" not in lines[0]
