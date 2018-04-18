@@ -24,13 +24,18 @@ def run_check(config):
         column = str(line).split()
         host = column[3]
         port = 0
+
         if host[:3] == ":::":
             port = int(host[3:])
             host = ":::"
         elif len(host.split(":")) > 1:
             port = int(host.split(":")[1])
             host = host.split(":")[0]
-        name = column[6].split("/")[1]
+
+        name = ""
+        if len(column) > 6:
+            name = column[6].split("/")[1]
+
         if port > UNKNOWN_PORT_LIMIT \
            and port not in XMPP_PORTS \
            and host in EVERY_IPS:
