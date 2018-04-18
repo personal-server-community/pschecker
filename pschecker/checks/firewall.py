@@ -14,10 +14,7 @@ FIREWALL_NAMES = ["iptables", "ufw"]
 
 def run_check(config):
     is_firewall_up = False
-    for firewall_name in FIREWALL_NAMES:
-        lines = get_lines_from_command("ps -ef | grep %s" % firewall_name)
-        if len(lines) > 2:
-            is_firewall_up = True
+    is_firewall_up = check_ufw()
 
     if is_firewall_up:
         return {
@@ -28,3 +25,10 @@ def run_check(config):
             "status": "FAILURE",
             "message": "No firewall is running."
         }
+
+
+def check_ufw():
+    lines = get_lines_from_command("sudo ufw status")
+    return len(lines) > 2 and \
+        "Status" in lines[1] and \
+        "inactive" not in lines[1]
