@@ -31,9 +31,13 @@ def build_config(distribution):
 
 
 def display_introduction(config):
-    print("Welcome to Personal Server Checker!")
+    print("Running the audit of your personal server...")
+    print("")
+    print("Context:")
+    print("- Distribution: %s" % config["distribution"])
+    print("")
     print("Your personal server diagnostic is:")
-    print("Distribution: %s" % config["distribution"])
+    print("")
 
 
 def run_diagnostic(config):
@@ -42,6 +46,7 @@ def run_diagnostic(config):
             check_runner.name,
             check_runner.run_check(config)
         )
+        print("----")
 
 
 def display_check_result(name, result):
