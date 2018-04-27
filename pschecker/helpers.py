@@ -8,7 +8,9 @@ def get_lines_from_command(command):
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT
     )
-    return result.stdout.readlines()
+    lines = result.stdout.readlines()
+    lines = [line.decode() if isinstance(line, bytes) else line for line in lines]
+    return lines
 
 
 def get_first_line_from_command(command):
