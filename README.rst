@@ -16,3 +16,12 @@ will know if your setup has the minimum security required to be online.
     Root must not use password: OK
     No process listens on 0.0.0.0 host: OK
     You are all good!
+
+Contributors
+============
+
+* @gelnior
+* @ldvc
+* @nicofrand
+* @Phyks
+* @ZeHiro
