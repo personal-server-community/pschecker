@@ -1,4 +1,4 @@
-pschecker
+PSChecker
 =========
 
 `pschecker` stands for Personal Server Checker. It's a simple Python script
