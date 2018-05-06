@@ -4,7 +4,8 @@ from . import (
     firewall,
     host_listening,
     root_password,
-    last_update
+    last_update,
+    domain_names
 )
 
 
@@ -12,7 +13,8 @@ check_runners = [
     root_password,
     host_listening,
     firewall,
-    last_update
+    last_update,
+    domain_names
 ]
 
 
