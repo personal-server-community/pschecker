@@ -9,7 +9,7 @@ def get_lines_from_command(command):
         stderr=subprocess.STDOUT
     )
     lines = result.stdout.readlines()
-    lines = [line.decode() if isinstance(line, bytes) else line for line in lines]
+    lines = [str(line) if isinstance(line, bytes) else line for line in lines]
     return lines
 
 

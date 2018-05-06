@@ -18,15 +18,24 @@ ENDC = '\033[0m'
     help="Distribution your server is running on. Choose between debian, " + \
          "ubuntu or arch."
 )
-def cli(distribution):
-    config = build_config(distribution)
+@click.option(
+    "--domains",
+    default="",
+    help="Domain names that targets your server."
+)
+def cli(distribution, domains):
+    config = build_config(distribution, domains)
     display_introduction(config)
     run_diagnostic(config)
 
 
-def build_config(distribution):
+def build_config(distribution, domains):
+    domain_names = []
+    if len(domains) > 0:
+        domain_names = domains.split(",")
     return {
-        "distribution": distribution
+        "distribution": distribution,
+        "domains": domain_names
     }
 
 
@@ -35,6 +44,7 @@ def display_introduction(config):
     print("")
     print("Context:")
     print("- Distribution: %s" % config["distribution"])
+    print("- Domain names: %s" % ", ".join(config["domains"]))
     print("")
     print("Your personal server diagnostic is:")
     print("")
