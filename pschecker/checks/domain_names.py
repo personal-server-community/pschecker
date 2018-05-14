@@ -7,11 +7,12 @@ description = "Ensure that your apps can only be reached through HTTPS"
 
 
 def run_check(config):
+    domains = config.get("domains", [])
     success = True
     without_ssl = []
     bad_certs = []
     not_reachable = []
-    for domain in config["domains"]:
+    for domain in domains:
         try:
             response = requests.get(
                 "http://%s" % domain,
@@ -29,7 +30,9 @@ def run_check(config):
             success = False
             not_reachable.append(domain)
 
-    if success:
+    if len(domains) == 0:
+        return {"status": "EMPTY"}
+    elif success:
         return {"status": "SUCCESS"}
     else:
         message = "Following errors were encountered:"

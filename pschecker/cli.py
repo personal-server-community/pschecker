@@ -52,11 +52,13 @@ def display_introduction(config):
 
 def run_diagnostic(config):
     for check_runner in checks.check_runners:
-        display_check_result(
-            check_runner.name,
-            check_runner.run_check(config)
-        )
-        print("----")
+        result = check_runner.run_check(config)
+        if result["status"] != "EMPTY":
+            display_check_result(
+                check_runner.name,
+                result
+            )
+            print("----")
 
 
 def display_check_result(name, result):
