@@ -22,8 +22,8 @@ def run_check(config):
         }
     else:
         return {
-            "status": "FAILURE",
-            "message": "No firewall is running."
+            "status": "WARNING",
+            "message": "No firewall was found."
         }
 
 
