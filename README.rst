@@ -8,14 +8,9 @@ will know if your setup has the minimum security required to be online.
 .. code::
 
     $ pip install pschecker
-    $ pschecker
 
-    Welcome to Personal Server Checker!
-    Your personal server diagnostic is:
-    Distribution: debian
-    Root must not use password: OK
-    No process listens on 0.0.0.0 host: OK
-    You are all good!
+
+|Screenshot|
 
 Contributors
 ============
@@ -25,3 +20,6 @@ Contributors
 * @nicofrand
 * @Phyks
 * @ZeHiro
+
+
+.. |Screenshot| image:: https://raw.githubusercontent.com/personal-server-community/pschecker/master/pscheckerrunning.png
